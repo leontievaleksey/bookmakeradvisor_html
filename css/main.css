@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* FONTS */
 @font-face {
   font-family: 'ProximaNova';
@@ -21,6 +22,12 @@
   font-family: 'ProximaNova';
   src: url("../fonts/ProximaNova/ProximaNova-Bold.ttf");
   font-weight: bold;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'GothamBlack';
+  src: url("../fonts/Gotham Black.otf");
+  font-weight: normal;
   font-style: normal; }
 
 * {
@@ -51,15 +58,56 @@ h3.post_item_title {
   line-height: 22px;
   color: #000; }
 
+h3.article_title {
+  font-size: 22px;
+  line-height: 26px;
+  color: #4e4e4e;
+  font-weight: 600;
+  margin: 0; }
+
 ul {
   margin: 0;
   padding: 0;
   list-style: none; }
 
+blockquote {
+  position: relative; }
+  blockquote:before {
+    content: '“';
+    font-family: 'GothamBlack';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 60px;
+    color: #307FE2; }
+
 .container {
   width: 1200px;
   padding: 0 17px;
   margin: 0 auto; }
+
+.clearfix:after, .clearfix:before {
+  content: "";
+  display: table;
+  table-layout: fixed; }
+
+.clearfix:after {
+  clear: both; }
+
+.mobile_only {
+  display: none; }
+  @media (max-width: 767px) {
+    .mobile_only {
+      display: block; } }
+
+.bold {
+  font-weight: bold; }
+
+.lowercase {
+  text-transform: lowercase; }
+
+.uppercase {
+  text-transform: uppercase; }
 
 .flex {
   display: -webkit-box;
@@ -232,12 +280,15 @@ ul {
     margin-right: 8px; }
   .info_block img {
     display: block; }
+  .info_block .info_block_text {
+    font-weight: 700;
+    font-size: 15px; }
 
 .section_content_table {
   padding-top: 40px;
   padding-bottom: 40px; }
   .section_content_table > div {
-    padding: 0 50px; }
+    padding-left: 50px; }
   .section_content_table .table_nav {
     font-size: 12px;
     line-height: 14px;
@@ -251,6 +302,20 @@ ul {
         border-right: none; }
       .section_content_table .table_nav li a {
         color: #307fe2; }
+      .section_content_table .table_nav li.active {
+        position: relative; }
+        .section_content_table .table_nav li.active:after {
+          content: ' ';
+          display: block;
+          width: 22px;
+          height: 2px;
+          position: absolute;
+          bottom: -5px;
+          margin: 0 auto;
+          background-color: #58c1ff;
+          left: calc(50% - 11px); }
+        .section_content_table .table_nav li.active a {
+          color: #1f5497; }
   .section_content_table .table_header {
     height: 43px;
     -webkit-box-align: center;
@@ -265,6 +330,8 @@ ul {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
     padding-top: 15px;
     padding-bottom: 15px;
     border-top: 1px solid #f5f5f5;
@@ -279,8 +346,6 @@ ul {
       -webkit-box-align: center;
       -ms-flex-align: center;
       align-items: center; }
-    .section_content_table .table_row img {
-      margin-right: 19px; }
     .section_content_table .table_row .name_cell {
       -webkit-box-align: center;
       -ms-flex-align: center;
@@ -292,12 +357,18 @@ ul {
       font-weight: 600; }
       .section_content_table .table_row .rating_cell img {
         margin-right: 23px; }
-    .section_content_table .table_row .rating_cell {
+    .section_content_table .table_row .reviews_cell {
       font-weight: 600; }
-      .section_content_table .table_row .rating_cell img {
+      .section_content_table .table_row .reviews_cell img {
         margin-right: 9px; }
     .section_content_table .table_row .two_buttons_h_cell a:first-child {
       margin-right: 20px; }
+    .section_content_table .table_row .row_description {
+      width: 100%;
+      color: #989ba1;
+      font-size: 10px;
+      font-weight: 400;
+      margin: 17px 0 0; }
 
 .section_content_table_bookmakers .table_cell_1 {
   width: 292px; }
@@ -311,8 +382,100 @@ ul {
 .section_content_table_bookmakers .table_cell_4 {
   width: auto; }
 
+.section_content_table_bonus .table_cell_1 {
+  width: 250px; }
+
+.section_content_table_bonus .table_cell_2 {
+  width: 280px; }
+
+.section_content_table_bonus .table_cell_3 {
+  width: 200px; }
+
+.section_content_table_bonus .table_cell_4 {
+  width: 229px; }
+
+.section_content_table_bonus .table_cell_5 {
+  width: auto; }
+
+.section_content_table_bonus .bonus_cell {
+  font-size: 15px; }
+
+.section_content_table_bonus .bonus_code_cell, .section_content_table_bonus .turnover_cell {
+  font-weight: 400; }
+
+.section_content_table_betts .table_cell_1 {
+  width: 130px; }
+
+.section_content_table_betts .table_cell_2 {
+  width: 87px; }
+
+.section_content_table_betts .table_cell_3 {
+  width: 304px;
+  padding-right: 55px; }
+
+.section_content_table_betts .table_cell_4 {
+  width: 197px; }
+
+.section_content_table_betts .table_cell_5 {
+  width: 142px; }
+
+.section_content_table_betts .table_cell_6 {
+  width: 142px; }
+
+.section_content_table_betts .table_cell_7 {
+  width: auto; }
+
+.section_content_table_betts .table_header_titles.table_cell_5, .section_content_table_betts .table_header_titles.table_cell_6, .section_content_table_betts .table_header_titles.table_cell_7 {
+  padding-left: 7px; }
+
+.section_content_table_betts .date_cell, .section_content_table_betts .time_cell, .section_content_table_betts .category_cell {
+  font-weight: 400; }
+
+.section_content_table_betts .match_cell, .section_content_table_betts .coeff_cell {
+  font-size: 15px; }
+
+.section_content_table_betts .match_cell {
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+  .section_content_table_betts .match_cell .team_1 {
+    margin-right: 14px; }
+  .section_content_table_betts .match_cell .team_2 {
+    margin-left: 14px; }
+
+.section_content_table_betts .coeff_wrap {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+  .section_content_table_betts .coeff_wrap img {
+    margin-top: 11px; }
+
+.section_posts_archive {
+  margin-top: 43px; }
+  .section_posts_archive .post_heading {
+    font-size: 11px; }
+    .section_posts_archive .post_heading a {
+      color: #307fe2;
+      font-weight: 700; }
+    .section_posts_archive .post_heading p {
+      margin: 0; }
+  .section_posts_archive .post_item_excerpt {
+    line-height: 20px; }
+  .section_posts_archive .post_item_readmore {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: #28ce7a; }
+    .section_posts_archive .post_item_readmore span {
+      margin-right: 8px; }
+
 .section_posts_3col {
-  margin-top: 43px;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   -ms-flex-pack: distribute;
@@ -350,25 +513,139 @@ ul {
       align-items: center; }
       .section_posts_3col .post_item .post_item_review_bock img {
         margin-right: 7px; }
+    .section_posts_3col .post_item .image_block img {
+      width: 100%;
+      height: auto; }
     .section_posts_3col .post_item .content_block {
       padding: 28px 20px; }
-    .section_posts_3col .post_item .post_heading {
-      font-size: 11px; }
-      .section_posts_3col .post_item .post_heading a {
-        color: #307fe2;
-        font-weight: 700; }
-      .section_posts_3col .post_item .post_heading p {
-        margin: 0; }
     .section_posts_3col .post_item .post_item_title {
       margin: 12px 0 7px; }
-    .section_posts_3col .post_item .post_item_excerpt {
-      line-height: 20px; }
-    .section_posts_3col .post_item .post_item_readmore {
-      -webkit-box-align: center;
-      -ms-flex-align: center;
-      align-items: center;
-      font-size: 15px;
-      font-weight: 700;
-      color: #28ce7a; }
-      .section_posts_3col .post_item .post_item_readmore span {
-        margin-right: 3px; }
+
+.section_posts_fullwidh {
+  padding-bottom: 40px;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap; }
+  .section_posts_fullwidh .post_item {
+    width: 100%;
+    padding: 21px 25px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: #ffffff; }
+    .section_posts_fullwidh .post_item:last-child {
+      border-radius: 0 0 8px 8px; }
+    .section_posts_fullwidh .post_item:first-child {
+      border-radius: 8px 8px 0 0; }
+  .section_posts_fullwidh .post_item_title {
+    margin: 11px 0; }
+  .section_posts_fullwidh .image_block img {
+    width: 285px;
+    height: auto; }
+  .section_posts_fullwidh .content_block {
+    width: 478px;
+    margin-left: 39px;
+    margin-right: 90px; }
+  .section_posts_fullwidh .buttons_block {
+    -ms-flex-item-align: center;
+    align-self: center; }
+    .section_posts_fullwidh .buttons_block .button {
+      width: 180px;
+      margin-top: 20px; }
+
+.section_review_archive {
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  margin-top: 43px; }
+  .section_review_archive .logo {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 30px;
+    width: 100%;
+    border-radius: 5px 5px 0 0; }
+    .section_review_archive .logo.ladbrokes {
+      background-color: #d9182b; }
+    .section_review_archive .logo.coral {
+      background-color: #3461a3; }
+    .section_review_archive .logo.betfair {
+      background-image: -webkit-gradient(linear, left top, right top, from(#ffc000), to(#ff9300));
+      background-image: -webkit-linear-gradient(left, #ffc000 0%, #ff9300 100%);
+      background-image: -o-linear-gradient(left, #ffc000 0%, #ff9300 100%);
+      background-image: linear-gradient(to right, #ffc000 0%, #ff9300 100%); }
+    .section_review_archive .logo.bet365 {
+      background-color: #007e59; }
+    .section_review_archive .logo.guts {
+      background-color: #000000; }
+  .section_review_archive .content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border-radius: 0 0 5px 5px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    padding: 24px 15px 21px; }
+    .section_review_archive .content img {
+      display: block; }
+    .section_review_archive .content .review_name {
+      margin: 10px 0 15px; }
+    .section_review_archive .content .excerpt {
+      line-height: 20px;
+      margin: 19px 0 20px;
+      text-align: center; }
+    .section_review_archive .content .button {
+      width: 120px; }
+
+.section_review_5col .review_item {
+  width: 207px; }
+
+.main {
+  width: 66.12%;
+  padding-right: 56px; }
+
+.section_articles {
+  padding: 0; }
+
+.articles .article {
+  background: url("../img/dashed-silver.png") 0 100% repeat-x;
+  padding: 65px 0 45px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px; }
+  .articles .article:last-child {
+    background: none; }
+  .articles .article .article_content {
+    margin-top: 19px; }
+    .articles .article .article_content a {
+      color: #307fe2;
+      text-decoration: underline; }
+    .articles .article .article_content ul {
+      list-style-image: url("../img/ul_marker.svg");
+      padding-left: 12px;
+      line-height: 26px; }
+      .articles .article .article_content ul li {
+        padding-left: 8px; }
+  .articles .article .button_block {
+    margin-top: 45px;
+    margin-bottom: 6px; }
+  .articles .article .button_image_block img {
+    display: block;
+    margin: 0 auto; }
+  .articles .article .button_image_block .button {
+    top: 81px;
+    left: 52px; }
+  .articles .article .button {
+    width: 170px;
+    margin: 0 auto; }
+  .articles .article .description {
+    margin: 26px 0 0; }
+
+.sidebar {
+  width: 33.87%;
+  border-left: 2px solid #f5f5f5; }
