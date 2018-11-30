@@ -51,10 +51,10 @@ a, .header_dropdown_button, i.fa {
 h1.title {
 	color: #ffffff;
 	font-size: 48px;
-	line-height: 1em;
+	line-height: 1.2em;
 	font-weight: 600;
 	margin-top: 0;
-	margin-bottom: 12px;
+	margin-bottom: 20px;
 }
 p.title_description {
 	margin: 0;
@@ -840,6 +840,11 @@ blockquote {
 .single_deposit_bonus {
 	background-image: linear-gradient(61deg, #ffb464 0%, #f6d365 100%);
 }
+.banner_single_image {
+	background-size: cover;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+}
 .promotion_article_banner {
 	background-color: #ca0000;
 	background-image: url('../img/banner_en_be.jpg');
@@ -854,6 +859,10 @@ blockquote {
 	flex-direction: column;
 	justify-content: center;
 	height: 346px;
+
+	h1.title {
+		max-width: 500px;
+	}
 }
 
 .banner_menu {
@@ -1221,6 +1230,51 @@ blockquote {
 	
 }
 
+.article_table,
+.widget_table {
+
+	a:not(.btn-green) {
+		color: #464950;
+
+	}
+
+	.name_cell {
+		align-items: center;
+		font-size: 15px;
+
+		img {
+			margin-right: 19px;
+		}
+		.title {
+			font-weight: bold;
+
+			&:hover {
+				color: #0DAA5A;
+			}
+		}
+
+		.text_block {
+			flex-direction: column;
+			
+			.description {
+				color: #464950;
+				font-size: 12px;
+			}
+		}
+	}
+}
+.article_table_row,
+.widget_table_row {
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: 1px solid #e6e6e6;
+	padding: 16px 19px 16px 28px;
+
+	&:last-child {
+		border-bottom: none;
+	}	
+}
+
 .post_heading {
 	font-size: 11px;
 	
@@ -1342,7 +1396,7 @@ blockquote {
 		}
 	}
 }
-.archive_section {
+.archive_section, .post_archive_section {
 	.section_posts_fullwidh {
 		.post_item {
 			margin-bottom: 20px;
@@ -1479,10 +1533,21 @@ blockquote {
 
 		.article_content {
 			margin-top: 19px;
-			
+
 			a {
 				color: #307fe2;
 				text-decoration: underline;
+			}
+
+			.article_table_row {
+				a {
+					color: #464950;
+					text-decoration: none;
+				}
+
+				.button {
+					width: 108px;
+				}
 			}
 
 			ul {
@@ -1499,11 +1564,9 @@ blockquote {
 			margin-top: 45px;
 			margin-bottom: 6px;
 		}
+		
 		.button_image_block {
-			img {
-				display: block;
-				margin: 0 auto;
-			}
+			
 			.button {
 				top: 81px;
 				left: 52px;
@@ -1525,6 +1588,14 @@ blockquote {
 		}
 	}
 
+}
+
+.article {
+	img {
+		max-width: 100%;
+		display: block;
+		margin: 0 auto;
+	}
 }
 
 /* SIDEBAR */
@@ -1557,48 +1628,7 @@ blockquote {
 	.widget_content {
 		margin-top: 10px;
 	}
-	.widget_table {
-
-		a:not(.btn-green) {
-			color: #464950;
-
-		}
-
-		.name_cell {
-			align-items: center;
-			font-size: 15px;
-
-			img {
-				margin-right: 19px;
-			}
-			.title {
-				font-weight: bold;
-
-				&:hover {
-					color: #0DAA5A;
-				}
-			}
-
-			.text_block {
-				flex-direction: column;
-				
-				.description {
-					color: #464950;
-					font-size: 12px;
-				}
-			}
-		}
-	}
-	.widget_table_row {
-		justify-content: space-between;
-		align-items: center;
-		border-bottom: 1px solid #e6e6e6;
-		padding: 16px 19px 16px 28px;
-
-		&:last-child {
-			border-bottom: none;
-		}	
-	}
+	
 
 	.widget_posts_archive {
 
@@ -1649,6 +1679,13 @@ blockquote {
 .post_content_wrapper {
 
 }
+.post_content_section {
+	padding-bottom: 55px;
+	border: 1px solid #ebebeb;
+}
+.post_archive_section {
+	padding-bottom: 51px;
+}
 .social_sidebar {
 	width: 128px;
 }
@@ -1679,18 +1716,20 @@ blockquote {
 		margin-bottom: 16px;
 	}
 }
-.post_content {
+.post_content,
+.author_text {
 	line-height: 20px;
 }
 .post_author {
 	margin-top: 40px;
+	padding-left: 18px;
 }
 .post_author_heading {
 	font-weight: 600;
 	text-transform: uppercase;
 	letter-spacing: 0.46px;
 	justify-content: space-between;
-	padding-left: 18px;
+	margin-bottom: 28px;
 
 	.line {
 		margin-top: 9px;
@@ -1699,7 +1738,30 @@ blockquote {
 		width: 100%;
 	}
 }
+.post_author_content {
+	padding-left: 19px;
+	
+	.img_block {
+		min-width: 100px;
+		width: 100px;
+		height: 100px;
+		margin-right: 29px;
 
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
+	
+}
+.author_name {
+	margin-top: 0;
+	margin-bottom: 15px;
+	line-height: 22px;
+}
+.author_text {
+	margin: 0;
+}
 
 
 /* PAGE WITH BANNER */
@@ -1716,10 +1778,13 @@ blockquote {
 
 	}
 	.breadcrumbs {
-		border-color: rgba(255,255,255,.32);
+		border-color: rgba(255,255,255,.2);
 
 		.breadcrumbs_link, .breadcrumbs_separator {
 			color: #fff;
+		}
+		.breadcrumbs_link:hover {
+			text-decoration: underline;
 		}
 	}
 }
