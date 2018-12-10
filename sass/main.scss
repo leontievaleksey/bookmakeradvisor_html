@@ -128,6 +128,15 @@ ul {
 }
 ul.list_style_round, ol.list_style_round {
 
+	&.x_icon {
+		li {
+			&:before {
+				background-color: #e04e39;
+				background-image: url('../img/x_icon.svg');
+			}
+		}
+	}
+
 	li {
 		padding: 5px 0 5px 55px;
 		position: relative;
@@ -154,6 +163,8 @@ ul.list_style_round, ol.list_style_round {
 			background-position: center center;
 			background-repeat: no-repeat;
 		}
+
+
 	}
 }
 
@@ -1033,15 +1044,31 @@ blockquote {
 		}
 	}
 }
+.banner_rating_block_wrapper  {
+	border-radius: 5px;
+	background-color: rgba(29,29,29,.9);
+}
+.banner_rating_hidden_blocks {
+	align-items: center;
+
+	&.hidden {
+		display: none;
+	}
+	
+}
+.banner_rating_block_divider {
+	width: 1px;
+	height: 65px;
+	background: #ffffff;
+	opacity: 0.32;
+}
 .banner_rating_block {
-	width: 193px;
+	min-width: 193px;
 	height: 163px;
 	padding: 35px 40px;
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-between;
-	border-radius: 5px;
-	background-color: rgba(29,29,29,.9);
 	color: #fff;
 	
 	p {
@@ -1060,14 +1087,34 @@ blockquote {
 		position: absolute;
 		top: 18px;
 		right: 15px;
-		width: 30px;
-		line-height: 7px;
-		font-size: 8px;
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		color: #fff;
-		opacity: .3;
+			
+
+		.banner_rating_block_closed {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			width: 30px;
+			line-height: 7px;
+			font-size: 8px;
+			color: #fff;
+			opacity: .3;
+		}
+		.banner_rating_block_opened {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			text-align: right;
+			height: 13px;
+			width: 13px;
+			line-height: 13px;
+			font-size: 30px;
+			color: #fff;
+			transform: rotateZ(45deg);
+		}
+		.banner_rating_block_closed.hidden,
+		.banner_rating_block_opened.hidden {
+			display: none;
+		}
 	}
 }
 .banner_menu {
@@ -2115,6 +2162,10 @@ blockquote {
 			}
 		}
 	}
+	.accordeon_content {
+		padding-top: 4px;
+		font-size: 14px;
+	}
 	.section_button {
 		margin-top: 30px;
 		margin-bottom: 10px;
@@ -2122,6 +2173,13 @@ blockquote {
 }
 .accordeon_header {
 	padding-bottom: 20px;
+}
+.accordeon_row {
+	&.opened {
+		.fa {
+			color: #28ce7a;
+		}
+	}
 }
 .accordeon_content {
 	padding: 45px 0 0px;
@@ -2169,6 +2227,18 @@ blockquote {
 	.list_style_round {
 		margin: 20px 0;
 	}
+
+	.tab_content {
+		display: none;
+
+		&.active {
+			display: block;
+
+			&.flex {
+				display: flex;
+			}
+		}
+	}
 }
 .content_scores {
 	flex-wrap: wrap;
@@ -2213,6 +2283,16 @@ blockquote {
 
 	&.active {
 		background-color: #ffc62b;
+	}
+}
+
+.section_leave_review {
+
+	.scores_line {
+		cursor: pointer;
+		&:hover{
+			background-color: #ffc62b;
+		}
 	}
 }
 
@@ -2300,13 +2380,18 @@ blockquote {
 			font-size: 15px;
 		}
 		select {
-			padding: 10px 15px;
+			width: 175px;
+			padding: 10px 35px 10px 15px;
 			border-radius: 5px;
 			border: 1px solid #cdced2;
 			font-size: 13px;
 			font-weight: 600;
 			text-transform: uppercase;
 			letter-spacing: 0.5px;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
+			background: url('../img/dropdown_arrow.svg') calc(100% - 15px) 50% no-repeat;
 		}
 	}
 	.button {
@@ -2368,22 +2453,45 @@ blockquote {
 
 	& > p {
 		max-height: 102px;
-		overflow-y: hidden;
+		overflow-y: hidden; transition: max-height .15s ease-in;
+	}
+
+	&.opened {
+
+		&  > p {
+			max-height: 9999px;
+			transition: max-height 1.3s ease-in;	
+		}
+
+		.show_more {
+			display: none;
+		}
+		.show_less {
+			display: flex;
+		}
+		
 	}
 	
-	.show_more {
-		display: flex;
+	.show_more, .show_less {
 		align-items: center;
 		justify-content: center;
+		cursor: pointer;
+	}
+	.show_more {
+		display: flex;
 		position: relative;
 		top: -20px;
 		padding: 30px 0 0;
 		background-color: rgba(255,255,255, .7);
-		cursor: pointer;
+	}
+	.show_less {
+		display: none;
+		position: static;
+		padding-top: 9px;
 	}
 }
 .comment_full {
-	.show_more {
+	.show_more, .show_less {
 		display: none;
 	}
 }
@@ -2423,7 +2531,7 @@ blockquote {
 		}
 	}
 }
-.comment_responses, .comment_short .show_more {
+.comment_responses, .comment_short .show_more, .comment_short .show_less {
 	font-size: 15px;
 	font-weight: 600;
 
@@ -2434,6 +2542,7 @@ blockquote {
 	}
 	.text {
 		color: #464950;
+		transition-duration: .3s;
 	}
 	.fa {
 		font-size: 20px;
@@ -2446,7 +2555,7 @@ blockquote {
 	}
 
 	&:hover {
-		.fa {
+		.fa, .text {
 			color: #28ce7a;
 		}
 	}
