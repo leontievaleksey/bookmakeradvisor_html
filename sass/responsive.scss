@@ -2,9 +2,150 @@
   
 }
 @media (max-width: 1006px){
-  // width: 768px; /*0.8*/
-//   padding: 0 10px;
-//   max-width: 100%;
+	.header_main {
+		
+		.header_mobile_menu {
+	
+			display: block;
+
+			.header_mobile_menu_trigger {
+				width: 25px;
+				height: 20px;
+				background: url('../img/drop_menu_icon.svg') 50% 50% no-repeat;
+				cursor: pointer;
+
+				&.opened {
+					background: url('../img/drop_menu_icon_opened.svg') 50% 50% no-repeat;					
+				}
+			}
+			
+		}
+
+	}	
+
+	.header_mobile_main_menu {
+		width: 100%;
+		background-color: #323232;
+		display: none;	
+
+		.container {
+			padding: 0;
+		}
+
+		.navigation {
+
+			& > ul {
+				font-size: 11px;
+				font-weight: 700;
+				text-transform: uppercase;
+				letter-spacing: 0.39px;
+				width: 100%;
+
+				> li {
+					padding: 0 20px;
+					border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+					&:first-child {
+						border-top: 1px solid rgba(255, 255, 255, 0.2);
+					}
+
+					&.active {
+						.main_menu_item {
+							color: #7fcfff;
+						}
+					}
+					
+					&.menu_item_yellow:hover {
+						.main_menu_item {
+							color: #fff751;
+						}
+					}
+					&.menu_item_green:hover {
+						.main_menu_item {
+							color: #38ae79;
+						}
+					}
+					&.menu_item_red:hover {
+						.main_menu_item {
+							color: #ff553d;
+						}
+					}
+					&.menu_item_blue:hover {
+						.main_menu_item {
+							color: #3989ed;
+						}
+					}
+					&.menu_item_purple:hover {
+						.main_menu_item {
+							color: #ac79ff;
+						}
+					}
+					&.menu_item_lightgreen:hover {
+						.main_menu_item {
+							color: #28ce7a;
+						}
+					}
+					&:hover {
+
+						.main_menu_item {
+							color: #7fcfff;
+						}
+						.grid_submenu, .submenu {
+							display: block;
+						}
+					}
+					
+					&.has_submenu {
+						position: relative;
+
+						.main_menu_item:after {
+						 	content: '\f107';
+						 	font-family:'FontAwesome';
+						    display: block;
+						    width: 9px;
+						    height: 5px;
+						    position: absolute;
+						    top: calc(50% - 2.5px);
+						    right: 21px;
+						    line-height: 7px;
+						    font-size: 14px;
+						    font-weight: 400;
+						    opacity: .6;
+						}
+
+						&:hover {
+							.main_menu_item:after {
+								content: '\f106';
+								opacity: 1;
+							}
+						}
+					}
+				}
+
+				a {
+					color: #fff;
+				}
+
+				.main_menu_item {
+					line-height: 40px;
+					display: block;
+					position: relative;
+				}
+
+			}
+			
+			.grid_submenu, .submenu, .sub_submenu {
+				display: none;
+				position: absolute;
+				top: calc(100% - 1px);
+				left: 0;
+				border-top: 3px solid #7fcfff;
+				background-color: #323232;
+			}
+		}
+		
+	}
+	
 }
 @media (max-width: 767px){
   // width: 100%;
