@@ -536,6 +536,8 @@ blockquote {
       background: url("../img/drop_menu_icon.svg") 50% 50% no-repeat; }
     .header_main .header_dropdown_button.opened .header_dropdown_button_icon {
       background: url("../img/drop_menu_icon_opened.svg") 50% 50% no-repeat; }
+  .header_main .header_mobile_main_menu {
+    display: none; }
   .header_main .header_main_menu {
     width: 100%;
     background-color: #323232;
