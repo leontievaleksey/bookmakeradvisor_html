@@ -519,6 +519,11 @@
 		</div>
 		<div id="header_mobile_main_menu" class="header_mobile_main_menu">
 			<div class="container">
+				<form class="header_mobile_search_block pos-r" method="POST">
+					<button class="header_mobile_search_submit"><img src="img/search_icon_gray.svg" alt=""></button>
+					<input type="text" class="header_mobile_search" name="s" placeholder="Search" autocomplete="off">
+				</form>
+
 				<nav class="navigation flex">
 					<ul>
 						<li class="has_submenu">
@@ -931,8 +936,20 @@
 								<li><a href="#" class="main_submenu_item">Contact Us</a></li>
 							</ul>
 						</li>
+						<li class="has_submenu">
+							<a class="main_menu_item" href="#"><img src="img/flag_ico_en.svg" alt=""></a>
+
+							<ul class="submenu">
+								<li><a href="#" class="main_submenu_item"><img src="img/flag_ico_en.svg" alt=""></a></li>
+								<li><a href="#" class="main_submenu_item"><img src="img/flag_ico_en.svg" alt=""></a></li>
+							</ul>
+						</li>
 					</ul>
 				</nav>
+				<div class="header_mobile_profile flex">
+					<a href="#" class="button btn-black">Register</a>
+					<a href="#" class="button btn-green">Login</a>
+				</div>
 			</div>
 		</div>
 
@@ -977,7 +994,12 @@
 					<div class="table_row flex">
 						<div class="name_cell table_cell_1 flex">
 							<img src="img/table_item_1.png" alt="">
-							<a href="#" class="title">888</a>
+							<div class="text_block flex">
+								<a href="#" class="title">888</a>
+								<div class="table_stars mobile_block">
+									<img src="img/5stars.png" alt="">
+								</div>
+							</div>
 						</div>
 						<div class="rating_cell table_cell_2 flex">
 							<img src="img/5stars.png" alt="" class="rating_stars">
@@ -996,7 +1018,12 @@
 					<div class="table_row flex">
 						<div class="name_cell table_cell_1 flex">
 							<img src="img/table_item_2.png" alt="">
-							<a href="#" class="title">Bet365</a>
+							<div class="text_block flex">
+								<a href="#" class="title">Bet365</a>
+								<div class="table_stars mobile_block">
+									<img src="img/5stars.png" alt="">
+								</div>
+							</div>
 						</div>
 						<div class="rating_cell table_cell_2 flex">
 							<img src="img/5stars.png" alt="" class="rating_stars">
@@ -1015,7 +1042,12 @@
 					<div class="table_row flex">
 						<div class="name_cell table_cell_1 flex">
 							<img src="img/table_item_3.png" alt="">
-							<a href="#" class="title">Betfair</a>
+							<div class="text_block flex">
+								<a href="#" class="title">Betfair</a>
+								<div class="table_stars mobile_block">
+									<img src="img/4stars.png" alt="">
+								</div>
+							</div>
 						</div>
 						<div class="rating_cell table_cell_2 flex">
 							<img src="img/4stars.png" alt="" class="rating_stars">
@@ -1034,7 +1066,12 @@
 					<div class="table_row flex">
 						<div class="name_cell table_cell_1 flex">
 							<img src="img/table_item_4.png" alt="">
-							<a href="#" class="title">Guts Sports</a>
+							<div class="text_block flex">
+								<a href="#" class="title">Guts Sports</a>
+								<div class="table_stars mobile_block">
+									<img src="img/4stars.png" alt="">
+								</div>
+							</div>
 						</div>
 						<div class="rating_cell table_cell_2 flex">
 							<img src="img/4stars.png" alt="" class="rating_stars">
@@ -1053,7 +1090,12 @@
 					<div class="table_row flex">
 						<div class="name_cell table_cell_1 flex">
 							<img src="img/table_item_5.png" alt="">
-							<a href="#" class="title">Unibet</a>
+							<div class="text_block flex">
+								<a href="#" class="title">Unibet</a>
+								<div class="table_stars mobile_block">
+									<img src="img/3stars.png" alt="">
+								</div>
+							</div>
 						</div>
 						<div class="rating_cell table_cell_2 flex">
 							<img src="img/3stars.png" alt="" class="rating_stars">
@@ -1228,6 +1270,18 @@
 							<a href="#" class="button btn-green">Claim £50</a>
 						</div>
 						<p class="row_description">T&C: Place a series of bets at minimum odds of 1.6 with a minimum stake equal to the combined value of 7x your deposit amount and bonus funds received and once such bets have settled, any bonus funds and winnings remaining will become withdrawal.</p>
+						<div class="table_bonus_mobile_block mobile_block">
+							<p class="table_bonus_mobile_big"><span class="table_bonus_mobile_title">Bonus:</span> £50 Welcome Offer</p>
+							<p><span class="table_bonus_mobile_title">Bonus Code:</span> ZTTC06</p>
+							<p><span class="table_bonus_mobile_title">Turnover:</span> No requirements</p>
+							<p>
+								<span class="table_bonus_mobile_title">T&C:</span> 
+								<span class="hidden_text">Place a series of bets at minimum odds of 1.6 with a minimum stake equal to the combined value of 7x your deposit amount and bonus funds received and once such bets have settled, any bonus funds and winnings remaining will become withdrawal.</span>
+								<a href="#" class="table_mobile_readmore flex">
+								Read More <i class="fa fa-angle-down"></i>
+								</a>
+							</p>
+						</div>
 					</div>
 
 					<div class="table_row flex">
@@ -1248,6 +1302,18 @@
 							<a href="#" class="button btn-green">Claim £10</a>
 						</div>
 						<p class="row_description">T&C: Place a series of bets at minimum odds of 1.6 with a minimum stake equal to the combined value of 7x your deposit amount and bonus funds received and once such bets have settled, any bonus funds and winnings remaining will become withdrawal.</p>
+						<div class="table_bonus_mobile_block mobile_block">
+							<p class="table_bonus_mobile_big"><span class="table_bonus_mobile_title">Bonus:</span> 2 x 100% Profit Boosts</p>
+							<p><span class="table_bonus_mobile_title">Bonus Code:</span> No code</p>
+							<p><span class="table_bonus_mobile_title">Turnover:</span> 15x bonus amount</p>
+							<p>
+								<span class="table_bonus_mobile_title">T&C:</span> 
+								<span class="hidden_text">Place a series of bets at minimum odds of 1.6 with a minimum stake equal to the combined value of 7x your deposit amount and bonus funds received and once such bets have settled, any bonus funds and winnings remaining will become withdrawal.</span>
+								<a href="#" class="table_mobile_readmore flex">
+								Read More <i class="fa fa-angle-down"></i>
+								</a>
+							</p>
+						</div>
 					</div>
 
 					<div class="table_row flex">
@@ -1268,6 +1334,18 @@
 							<a href="#" class="button btn-green">Claim £30</a>
 						</div>
 						<p class="row_description">T&C: Place a series of bets at minimum odds of 1.6 with a minimum stake equal to the combined value of 7x your deposit amount and bonus funds received and once such bets have settled, any bonus funds and winnings remaining will become withdrawal.</p>
+						<div class="table_bonus_mobile_block mobile_block">
+							<p class="table_bonus_mobile_big"><span class="table_bonus_mobile_title">Bonus:</span> £28 Welcome Offer</p>
+							<p><span class="table_bonus_mobile_title">Bonus Code:</span> No code</p>
+							<p><span class="table_bonus_mobile_title">Turnover:</span> No requirements</p>
+							<p>
+								<span class="table_bonus_mobile_title">T&C:</span> 
+								<span class="hidden_text">Place a series of bets at minimum odds of 1.6 with a minimum stake equal to the combined value of 7x your deposit amount and bonus funds received and once such bets have settled, any bonus funds and winnings remaining will become withdrawal.</span>
+								<a href="#" class="table_mobile_readmore flex">
+								Read More <i class="fa fa-angle-down"></i>
+								</a>
+							</p>
+						</div>
 					</div>
 
 					<div class="table_row flex">
@@ -1288,6 +1366,18 @@
 							<a href="#" class="button btn-green">Claim £20</a>
 						</div>
 						<p class="row_description">T&C: Place a series of bets at minimum odds of 1.6 with a minimum stake equal to the combined value of 7x your deposit amount and bonus funds received and once such bets have settled, any bonus funds and winnings remaining will become withdrawal.</p>
+						<div class="table_bonus_mobile_block mobile_block">
+							<p class="table_bonus_mobile_big"><span class="table_bonus_mobile_title">Bonus:</span> £20 free bet</p>
+							<p><span class="table_bonus_mobile_title">Bonus Code:</span> 300PLUS</p>
+							<p><span class="table_bonus_mobile_title">Turnover:</span> No requirements</p>
+							<p>
+								<span class="table_bonus_mobile_title">T&C:</span> 
+								<span class="hidden_text">Place a series of bets at minimum odds of 1.6 with a minimum stake equal to the combined value of 7x your deposit amount and bonus funds received and once such bets have settled, any bonus funds and winnings remaining will become withdrawal.</span>
+								<a href="#" class="table_mobile_readmore flex">
+								Read More <i class="fa fa-angle-down"></i>
+								</a>
+							</p>
+						</div>
 					</div>
 
 					<div class="table_row flex">
@@ -1308,6 +1398,18 @@
 							<a href="#" class="button btn-green">Claim £30</a>
 						</div>
 						<p class="row_description">T&C: Place a series of bets at minimum odds of 1.6 with a minimum stake equal to the combined value of 7x your deposit amount and bonus funds received and once such bets have settled, any bonus funds and winnings remaining will become withdrawal.</p>
+						<div class="table_bonus_mobile_block mobile_block">
+							<p class="table_bonus_mobile_big"><span class="table_bonus_mobile_title">Bonus:</span> Bet £10 & Get £30 in Free Bets</p>
+							<p><span class="table_bonus_mobile_title">Bonus Code:</span> RZ200</p>
+							<p><span class="table_bonus_mobile_title">Turnover:</span> No requirements</p>
+							<p>
+								<span class="table_bonus_mobile_title">T&C:</span> 
+								<span class="hidden_text">Place a series of bets at minimum odds of 1.6 with a minimum stake equal to the combined value of 7x your deposit amount and bonus funds received and once such bets have settled, any bonus funds and winnings remaining will become withdrawal.</span>
+								<a href="#" class="table_mobile_readmore flex">
+								Read More <i class="fa fa-angle-down"></i>
+								</a>
+							</p>
+						</div>
 					</div>
 
 					
@@ -1467,7 +1569,7 @@
 						</div>
 						<div class="coeff_cell table_cell_5 flex">
 							<div class="coeff_wrap flex">
-								<span class="pos-r">1.21 <img src="img/bet_down.svg" class="pos-a bet-arrow" alt=""></span>
+								<span class="pos-r">1.21 <img src="img/bet_down.svg" class="bet-arrow" alt=""></span>
 								<a href="#"><img src="img/bet_coral_logo.png" alt=""></a>
 							</div>
 						</div>
@@ -1555,7 +1657,7 @@
 						</div>
 						<div class="coeff_cell table_cell_5 flex">
 							<div class="coeff_wrap flex">
-								<span class="pos-r">2.55 <img src="img/bet_down.svg" class="pos-a bet-arrow" alt=""></span>
+								<span class="pos-r">2.55 <img src="img/bet_down.svg" class="bet-arrow" alt=""></span>
 								<a href="#"><img src="img/fonbet.png" alt=""></a>
 							</div>
 						</div>
@@ -1611,7 +1713,7 @@
 						</div>
 						<div class="coeff_cell table_cell_7 flex">
 							<div class="coeff_wrap flex">
-								<span class="pos-r">3.82 <img src="img/bet_up.svg" class="pos-a bet-arrow" alt=""></span>
+								<span class="pos-r">3.82 <img src="img/bet_up.svg" class="bet-arrow" alt=""></span>
 								<a href="#"><img src="img/bet_coral_logo.png" alt=""></a>
 							</div>
 						</div>
@@ -1649,7 +1751,7 @@
 						</div>
 						<div class="coeff_cell table_cell_6 flex">
 							<div class="coeff_wrap flex">
-								<span class="pos-r">4.20 <img src="img/bet_down.svg" class="pos-a bet-arrow" alt=""></span>
+								<span class="pos-r">4.20 <img src="img/bet_down.svg" class="bet-arrow" alt=""></span>
 								<a href="#"><img src="img/bet_ladbrokes_logo.png" alt=""></a>
 							</div>
 						</div>
